@@ -1,5 +1,18 @@
-참고 사이트1
+참고 사이트0 파이썬튜터
+https://pythontutor.com/
+
+참고 사이트1 딕셔너리 및 c
 https://wikidocs.net/104663
 
-참고 사이트2
+참고 사이트2 이터레이터&제너레이터&이터러블
 https://velog.io/@kiyo02/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0iterator-%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0generator-%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%94iterable-%EC%9D%98-%EC%9D%B4%ED%95%B4
+
+참고 사이트2 프론트엔드 개발자 취준생을 위한 자료 및 포스트
+https://velog.io/@sylagape1231/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%B7%A8%EC%A4%80%EC%83%9D%EC%9D%84-%EC%9C%84%ED%95%9C-%EA%B2%8C%EC%8B%9C%EA%B8%80%EC%9E%90%EB%A3%8C-%EB%AA%A8%EC%9D%8C
+
+참고 사이트3 스택&힙
+https://velog.io/@eunchae2000/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9D-Stack
+
+참고 사이트4 파이썬에서 스택,힙 메모리 관리
+https://f-lab.kr/insight/understanding-stack-and-heap-memory-in-python-20240630
+
