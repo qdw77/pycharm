@@ -1,0 +1,39 @@
+for i in range(25):
+  for j in range(25):
+      print("□", "\t", end='') #빈공간
+
+      print('▩', "\t", end='') #상자 3
+      print('▦', "\t", end='') # 상자 2
+      print('▨', "\t", end='') # 상자 1
+      print('▣', "\t", end='') # 보스
+      print('◈', "\t", end='')  # 쫄
+      print('●', "\t", end='')  # 캐릭터
+
+  print()
+
+
+# 상자 값 1 ▓
+# 몬스터 위치 값
+# 캐릭터 값
+# def initialize_map(self, empty_point):
+#         self.map_size = [25, 25]  # [세로, 가로]
+#         total = self.map_size[0] * self.map_size[1] # 전체 값 25*25
+#         empty_point = int(total * empty_point)  # 빈 공간 empty_point(%)
+#         box_pointA = int(total * box_pointA)  # 상자A box_pointA(%)
+#         box_pointB = int(total * box_pointB)  # 상자B box_pointB(%)
+#         box_pointC = int(total * box_pointC)  # 상자C box_pointC(%)
+#         boss_point = int(total * boss_point)  # 보스 boss_point(%)
+#         ulg_point = int(total * underling_point)  # 쫄 underling_point(%)
+#         crt_point = int(total * crt_point)  # 캐릭터 crt_point(%)
+
+#         all_point = total - (empty_point+box_pointA+box_pointB+box_pointC+boss_point+(ulg_point*5)+crt_point  # 전체 셀 - (빈 상자 위치+보스 위치+쫄 위치+캐릭터 위치)
+#
+#         # [들어갈 값] *
+#         total_info = ['□'] * empty_point + ['▩'] * box_pointA + ['▦'] * box_pointB + ['▨'] * box_pointC + ['▣'] * boss_point + ['◈'] * underling_point + ['●'] * crt_point 
+#         random.shuffle(total_info)  # 미리 섞고
+
+
+
+# print(mapline)
+# for i in range(25):
+#     for j in range(25):
