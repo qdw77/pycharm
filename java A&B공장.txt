@@ -1,0 +1,112 @@
+// Atest.java
+public class Atest {
+    // A공장의 휠 사이즈 (고정값)
+    static int WheelSize = 16;  
+
+    // A공장의 자금 (기본값: 0)
+    static int Amoney = 0;  
+
+    // A공장의 휠타이어 재고 (기본값: 0)
+    static int Wheel = 0;  
+
+    // 휠타이어 가격 (500,000원)
+    static int WheelPrice = 500000;  
+
+    // A공장의 위치
+    String Apoint = "신탄진";  
+    
+    // 휠타이어를 만드는 메서드
+    // 매개변수 quantity: 만들 휠타이어의 개수
+    public void Aproduce(int quantity) {
+        Wheel += quantity;  // 생성된 휠타이어 수만큼 A공장의 재고 증가
+        // 휠타이어 제작 완료 후 출력
+        System.out.println(quantity + "개의 휠타이어를 제작했습니다. 현재 재고: " + Wheel);
+    }
+
+    // 휠타이어를 판매하고 자금을 갱신하는 메서드
+    // 매개변수 quantity: 판매할 휠타이어의 개수
+    public void Acount(int quantity) {
+        // 판매할 휠타이어가 재고보다 많으면 안됨
+        if (Wheel >= quantity) {
+            int totalPrice = WheelPrice * quantity;  // 판매 금액 계산
+            Amoney += totalPrice;  // 판매 금액만큼 자금 증가
+            Wheel -= quantity;  // 판매된 휠타이어만큼 재고 감소
+            // 판매 후 결과 출력
+            System.out.println(quantity + "개의 휠타이어를 판매하였습니다. 현재 자금: " + Amoney + "원, 남은 재고: " + Wheel);
+        } else {
+            // 재고 부족 시 메시지 출력
+            System.out.println("판매할 수 있는 휠타이어가 부족합니다.");
+        }
+    }
+}
+
+// Btest.java
+public class Btest {
+    // B공장의 자금 (기본값: 0)
+    static int Bmoney = 0;  
+
+    // B공장의 휠타이어 재고 (기본값: 0)
+    static int BWheelStock = 0;  
+
+    // B공장이 휠타이어를 구매하는 메서드
+    // 매개변수 quantity: 구매할 휠타이어의 개수
+    // 매개변수 aFactory: A공장을 나타내는 Atest 객체 (A공장에서 휠타이어를 구매하기 위해 필요)
+    public void BbuyWheel(int quantity, Atest aFactory) {
+        // 휠타이어는 4개 단위로만 구매 가능
+        if (quantity % 4 != 0) {
+            System.out.println("휠타이어는 4개 단위로 구매해야 합니다.");
+        } else {
+            int totalPrice = Atest.WheelPrice * quantity;  // 휠타이어의 총 가격 계산
+            // A공장의 자금이 충분한지 확인
+            if (Atest.Amoney >= totalPrice) {
+                // A공장에서 자금 차감
+                Atest.Amoney -= totalPrice;
+                // B공장에서 자금 증가
+                Bmoney += totalPrice;
+                // B공장의 휠타이어 재고 증가
+                BWheelStock += quantity;
+                // 휠타이어 구매 후 출력
+                System.out.println("B공장에서 " + quantity + "개의 휠타이어를 구매했습니다. 현재 자금: " + Bmoney + "원, 재고: " + BWheelStock);
+            } else {
+                // A공장에 자금이 부족할 경우
+                System.out.println("A공장에서 충분한 자금이 없습니다.");
+            }
+        }
+    }
+
+    // B공장이 휠타이어로 자동차를 만드는 메서드
+    public void BmakeCar() {
+        // 자동차를 만들려면 휠타이어 4개가 필요
+        if (BWheelStock >= 4) {
+            // 자동차 한 대 만들기 위해 휠타이어 4개 사용
+            BWheelStock -= 4;
+            // 자동차 만들기 후 출력
+            System.out.println("B공장에서 자동차를 만들었습니다. 남은 휠타이어: " + BWheelStock);
+        } else {
+            // 휠타이어 부족 시 자동차를 만들 수 없다는 메시지 출력
+            System.out.println("휠타이어가 부족하여 자동차를 만들 수 없습니다.");
+        }
+    }
+}
+
+
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // A공장 객체 생성
+        Atest Anum = new Atest();  // Atest 클래스의 객체 생성
+
+        // B공장 객체 생성
+        Btest B = new Btest();  // Btest 클래스의 객체 생성
+        
+        // A공장에서 휠타이어 100개 생산
+        Anum.Aproduce(100);  // Aproduce 메서드를 호출하여 100개의 휠타이어를 생산
+        
+        // B공장에서 휠타이어 8개를 구매
+        B.BbuyWheel(8, Anum);  // BbuyWheel 메서드를 호출하여 8개의 휠타이어를 A공장에서 구매
+        
+        // B공장에서 자동차 만들기
+        B.BmakeCar();  // BmakeCar 메서드를 호출하여 자동차를 제작
+    }
+}
+
