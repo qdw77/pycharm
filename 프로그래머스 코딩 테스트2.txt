@@ -1,0 +1,522 @@
+
+
+1. 문자열을 정수로 바꾸기
+문제 설명: 주어진 문자열을 정수로 변환하는 문제.
+
+Java 예시
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "1234";
+        // 문자열을 정수로 변환하는 함수 호출
+        System.out.println(strToInt(str));  // 출력: 1234
+    }
+
+    // 문자열을 정수로 변환하는 함수
+    public static int strToInt(String s) {
+        return Integer.parseInt(s);  // Integer.parseInt() 메서드를 사용하여 문자열을 정수로 변환
+    }
+}
+
+
+Python 예시
+
+def str_to_int(s):
+    # 문자열을 정수로 변환하는 함수
+    return int(s)  # int() 함수로 문자열을 정수로 변환
+
+s = "1234"
+# 문자열을 정수로 변환하는 함수 호출
+print(str_to_int(s))  # 출력: 1234
+
+
+2. 약수의 합
+문제 설명: 주어진 수의 약수의 합을 구하는 문제.
+
+Java 예시
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 12;
+        // 약수의 합을 구하는 함수 호출
+        System.out.println(sumOfDivisors(n));  // 출력: 28
+    }
+
+    // 주어진 수 n의 약수의 합을 구하는 함수
+    public static int sumOfDivisors(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {  // n이 i로 나누어지면 i는 약수
+                sum += i;  // 약수 합산
+            }
+        }
+        return sum;  // 약수의 합을 반환
+    }
+}
+
+Python 예시
+
+def sum_of_divisors(n):
+    # 주어진 수 n의 약수의 합을 구하는 함수
+    return sum(i for i in range(1, n+1) if n % i == 0)  # 약수만 골라 합산
+
+n = 12
+# 약수의 합을 구하는 함수 호출
+print(sum_of_divisors(n))  # 출력: 28
+
+
+3. 자릿수 더하기
+문제 설명: 주어진 정수의 각 자릿수를 더하는 문제.
+
+Java 예시
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 123;
+        // 자릿수의 합을 구하는 함수 호출
+        System.out.println(sumOfDigits(n));  // 출력: 6
+    }
+
+    // 주어진 정수 n의 자릿수 합을 구하는 함수
+    public static int sumOfDigits(int n) {
+        int sum = 0;
+        while (n > 0) {  // n이 0보다 클 때까지 반복
+            sum += n % 10;  // n의 마지막 자릿수를 더함
+            n /= 10;  // n에서 마지막 자릿수를 제거
+        }
+        return sum;  // 자릿수의 합을 반환
+    }
+}
+
+Python 예시
+
+def sum_of_digits(n):
+    # 주어진 정수 n의 자릿수 합을 구하는 함수
+    return sum(int(i) for i in str(n))  # 정수 n을 문자열로 바꾼 후 각 자릿수를 더함
+
+n = 123
+# 자릿수의 합을 구하는 함수 호출
+print(sum_of_digits(n))  # 출력: 6
+
+
+4. 짝수와 홀수
+문제 설명: 주어진 숫자가 짝수인지 홀수인지 구하는 문제.
+
+Java 예시
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 3;
+        // 숫자가 짝수인지 홀수인지 판단하는 함수 호출
+        System.out.println(isEven(n));  // 출력: 홀수
+    }
+
+    // 주어진 정수 n이 짝수인지 홀수인지 구하는 함수
+    public static String isEven(int n) {
+        return (n % 2 == 0) ? "짝수" : "홀수";  // n이 2로 나누어 떨어지면 짝수, 그렇지 않으면 홀수
+    }
+}
+Python 예시
+
+def is_even(n):
+    # 주어진 정수 n이 짝수인지 홀수인지 구하는 함수
+    return "짝수" if n % 2 == 0 else "홀수"  # n이 2로 나누어 떨어지면 짝수, 그렇지 않으면 홀수
+
+n = 3
+# 숫자가 짝수인지 홀수인지 판단하는 함수 호출
+print(is_even(n))  # 출력: "홀수"
+
+
+5. 평균 구하기
+문제 설명: 주어진 배열의 평균을 구하는 문제.
+
+Java 예시
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+        // 배열의 평균을 구하는 함수 호출
+        System.out.println(average(arr));  // 출력: 2.5
+    }
+
+    // 주어진 배열 arr의 평균을 구하는 함수
+    public static double average(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;  // 배열의 모든 값을 더함
+        }
+        return (double) sum / arr.length;  // 총합을 배열의 길이로 나누어 평균 계산
+    }
+}
+
+Python 예시
+
+def average(arr):
+    # 주어진 배열 arr의 평균을 구하는 함수
+    return sum(arr) / len(arr)  # 배열의 합을 배열 길이로 나누어 평균 계산
+
+arr = [1, 2, 3, 4]
+# 배열의 평균을 구하는 함수 호출
+print(average(arr))  # 출력: 2.5
+
+
+6. x만큼 간격이 있는 n개의 숫자
+문제 설명: x만큼 간격을 두고 n개의 숫자를 리스트로 반환하는 문제.
+
+Java 예시
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 2, n = 5;
+        // x만큼 간격이 있는 n개의 숫자를 구하는 함수 호출
+        System.out.println(Arrays.toString(generateSequence(x, n)));  // 출력: [2, 4, 6, 8, 10]
+    }
+
+    // x만큼 간격이 있는 n개의 숫자를 생성하는 함수
+    public static long[] generateSequence(int x, int n) {
+        long[] result = new long[n];
+        for (int i = 0; i < n; i++) {
+            result[i] = x * (i + 1);  // x의 배수로 숫자를 생성
+        }
+        return result;  // 생성된 숫자 배열 반환
+    }
+}
+
+Python 예시
+
+def generate_sequence(x, n):
+    # x만큼 간격이 있는 n개의 숫자를 생성하는 함수
+    return [x * (i + 1) for i in range(n)]  # x의 배수로 숫자를 생성하여 리스트 반환
+
+x, n = 2, 5
+# x만큼 간격이 있는 n개의 숫자를 구하는 함수 호출
+print(generate_sequence(x, n))  # 출력: [2, 4, 6, 8, 10]
+
+
+7. 나머지가 1이 되는 수 찾기
+문제 설명: n을 나누었을 때 나머지가 1이 되는 가장 작은 수를 찾는 문제.
+
+Java 예시
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        // 나머지가 1이 되는 가장 작은 수를 구하는 함수 호출
+        System.out.println(findSmallestDivisor(n));  // 출력: 3
+    }
+
+    // 나머지가 1이 되는 가장 작은 수를 찾는 함수
+    public static int findSmallestDivisor(int n) {
+        for (int i = 2; i < n; i++) {
+            if (n % i == 1) {  // 나머지가 1이 되는 수를 찾음
+                return i;
+            }
+        }
+        return n - 1;  // 나머지가 1이 되는 수가 없으면 n-1 반환
+    }
+}
+
+Python 예시
+
+def find_smallest_divisor(n):
+    # 나머지가 1이 되는 가장 작은 수를 찾는 함수
+    for i in range(2, n):
+        if n % i == 1:  # 나머지가 1이 되는 수를 찾음
+            return i
+    return n - 1  # 나머지가 1이 되는 수가 없으면 n-1 반환
+
+n = 10
+# 나머지가 1이 되는 가장 작은 수를 구하는 함수 호출
+print(find_smallest_divisor(n))  # 출력: 3
+
+
+1. 하샤드 수
+문제 설명: 주어진 수가 하샤드 수인지 확인하는 문제입니다. 하샤드 수란, 그 수의 각 자릿수를 더한 값이 그 수로 나누어 떨어지는 수입니다.
+
+Java 예시
+  
+public class Main {
+    public static void main(String[] args) {
+        int x = 18;
+        // 하샤드 수인지 확인하는 함수 호출
+        System.out.println(isHarshad(x));  // 출력: true
+    }
+
+    // 하샤드 수를 확인하는 함수
+    public static boolean isHarshad(int x) {
+        int sum = 0;
+        int temp = x;
+        
+        while (temp > 0) {
+            sum += temp % 10;  // 자릿수 합 계산
+            temp /= 10;  // 숫자에서 자릿수 제거
+        }
+
+        return x % sum == 0;  // 자릿수 합으로 나누어 떨어지면 true 반환
+    }
+}
+
+Python 예시
+ 
+def is_harshad(x):
+    # 하샤드 수를 확인하는 함수
+    digits_sum = sum(int(digit) for digit in str(x))  # 자릿수의 합 구하기
+    return x % digits_sum == 0  # 자릿수 합으로 나누어 떨어지면 True 반환
+
+x = 18
+# 하샤드 수인지 확인하는 함수 호출
+print(is_harshad(x))  # 출력: True
+
+
+2. 나누어 떨어지는 숫자 배열
+문제 설명: 주어진 배열에서 divisor로 나누어 떨어지는 숫자만 골라 새로운 배열을 반환하는 문제입니다.
+
+Java 예시
+  
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 9, 7, 10};
+        int divisor = 5;
+        // 나누어 떨어지는 숫자들만 골라 배열로 반환하는 함수 호출
+        System.out.println(Arrays.toString(divisibleNumbers(arr, divisor)));  // 출력: [5, 10]
+    }
+
+    // 나누어 떨어지는 숫자만 반환하는 함수
+    public static int[] divisibleNumbers(int[] arr, int divisor) {
+        List<Integer> result = new ArrayList<>();
+        for (int num : arr) {
+            if (num % divisor == 0) {  // divisor로 나누어 떨어지면 결과 배열에 추가
+                result.add(num);
+            }
+        }
+        return result.isEmpty() ? new int[] {-1} : result.stream().mapToInt(i -> i).toArray();  // 비어 있으면 [-1] 반환
+    }
+}
+Python 예시
+ 
+def divisible_numbers(arr, divisor):
+    # 나누어 떨어지는 숫자만 골라 배열로 반환하는 함수
+    result = [num for num in arr if num % divisor == 0]  # divisor로 나누어 떨어지는 숫자 필터링
+    return result if result else [-1]  # 결과가 없으면 [-1] 반환
+
+arr = [5, 9, 7, 10]
+divisor = 5
+# 나누어 떨어지는 숫자들만 골라 배열로 반환하는 함수 호출
+print(divisible_numbers(arr, divisor))  # 출력: [5, 10]
+
+
+3. 서울에서 김서방 찾기
+문제 설명: 주어진 문자열 배열에서 "김서방"이 있는 인덱스를 찾는 문제입니다.
+
+Java 예시
+  
+public class Main {
+    public static void main(String[] args) {
+        String[] seoul = {"Jane", "Kim"};
+        // "김서방"이 있는 인덱스를 찾는 함수 호출
+        System.out.println(findKim(seoul));  // 출력: 1
+    }
+
+    // "김서방"의 위치를 찾는 함수
+    public static String findKim(String[] seoul) {
+        for (int i = 0; i < seoul.length; i++) {
+            if (seoul[i].equals("Kim")) {  // "Kim"이 있으면 해당 인덱스를 반환
+                return "김서방은 " + i + "에 있다";
+            }
+        }
+        return "";  // 만약 "Kim"이 없다면 빈 문자열 반환
+    }
+}
+
+Python 예시
+ 
+def find_kim(seoul):
+    # "김서방"이 있는 인덱스를 찾는 함수
+    return f"김서방은 {seoul.index('Kim')}에 있다"
+
+seoul = ["Jane", "Kim"]
+# "김서방"이 있는 인덱스를 찾는 함수 호출
+print(find_kim(seoul))  # 출력: 김서방은 1에 있다
+
+
+4. 콜라츠 추측
+문제 설명: 주어진 숫자에 대해 콜라츠 추측을 적용하여 1이 될 때까지 몇 번의 연산이 필요한지 계산하는 문제입니다.
+
+Java 예시
+  
+public class Main {
+    public static void main(String[] args) {
+        int num = 6;
+        // 콜라츠 추측을 몇 번의 연산 후 1에 도달하는지 구하는 함수 호출
+        System.out.println(collatz(num));  // 출력: 8
+    }
+
+    // 콜라츠 추측을 구하는 함수
+    public static int collatz(int num) {
+        int count = 0;
+        while (num != 1) {
+            if (num % 2 == 0) {
+                num /= 2;  // 짝수일 때는 2로 나눔
+            } else {
+                num = num * 3 + 1;  // 홀수일 때는 3을 곱하고 1을 더함
+            }
+            count++;  // 연산 횟수 증가
+        }
+        return count;  // 연산 횟수 반환
+    }
+}
+
+Python 예시
+ 
+def collatz(num):
+    # 콜라츠 추측을 구하는 함수
+    count = 0
+    while num != 1:
+        if num % 2 == 0:
+            num //= 2  # 짝수일 때는 2로 나눔
+        else:
+            num = num * 3 + 1  # 홀수일 때는 3을 곱하고 1을 더함
+        count += 1  # 연산 횟수 증가
+    return count  # 연산 횟수 반환
+
+num = 6
+# 콜라츠 추측을 몇 번의 연산 후 1에 도달하는지 구하는 함수 호출
+print(collatz(num))  # 출력: 8
+
+
+5. 음양 더하기
+문제 설명: 주어진 배열에서 음수와 양수의 값에 따라 합을 구하는 문제입니다.
+
+Java 예시
+  
+public class Main {
+    public static void main(String[] args) {
+        int[] absolutes = {4, 7, 12};
+        boolean[] signs = {true, false, true};
+        // 음양 더하기를 계산하는 함수 호출
+        System.out.println(calculateSum(absolutes, signs));  // 출력: 9
+    }
+
+    // 음양 더하기를 계산하는 함수
+    public static int calculateSum(int[] absolutes, boolean[] signs) {
+        int sum = 0;
+        for (int i = 0; i < absolutes.length; i++) {
+            sum += signs[i] ? absolutes[i] : -absolutes[i];  // signs[i]가 true이면 양수, false이면 음수
+        }
+        return sum;
+    }
+}
+
+Python 예시
+ 
+def calculate_sum(absolutes, signs):
+    # 음양 더하기를 계산하는 함수
+    return sum(abs(num) if sign else -abs(num) for num, sign in zip(absolutes, signs))
+
+absolutes = [4, 7, 12]
+signs = [True, False, True]
+# 음양 더하기를 계산하는 함수 호출
+print(calculate_sum(absolutes, signs))  # 출력: 9
+
+
+6. 없는 숫자 더하기
+문제 설명: 0부터 9까지의 숫자 중에서 주어진 배열에 없는 숫자들의 합을 구하는 문제입니다.
+
+Java 예시
+  
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 6, 7, 8, 0};
+        // 없는 숫자들의 합을 구하는 함수 호출
+        System.out.println(sumOfMissingNumbers(numbers));  // 출력: 14
+    }
+
+    // 없는 숫자들의 합을 구하는 함수
+    public static int sumOfMissingNumbers(int[] numbers) {
+        int totalSum = 45;  // 0부터 9까지의 합 (45)
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;  // 주어진 배열의 합 계산
+        }
+        return totalSum - sum;  // 0부터 9까지의 합에서 배열의 합을 빼면 없는 숫자들의 합
+    }
+}
+
+Python 예시
+ 
+def sum_of_missing_numbers(numbers):
+    # 없는 숫자들의 합을 구하는 함수
+    return 45 - sum(numbers)  # 0부터 9까지의 합에서 배열의 합을 빼면 없는 숫자들의 합
+
+numbers = [1, 2, 3, 4, 6, 7, 8, 0]
+# 없는 숫자들의 합을 구하는 함수 호출
+print(sum_of_missing_numbers(numbers))  # 출력: 14
+
+
+7. 제일 작은 수 제거하기
+문제 설명: 주어진 배열에서 제일 작은 수를 제거한 후 배열을 반환하는 문제입니다.
+
+Java 예시
+  
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {4, 3, 2, 1};
+        // 제일 작은 수를 제거한 배열을 반환하는 함수 호출
+        System.out.println(Arrays.toString(removeSmallest(arr)));  // 출력: [4, 3, 2]
+    }
+
+    // 제일 작은 수를 제거한 배열을 반환하는 함수
+    public static int[] removeSmallest(int[] arr) {
+        if (arr.length == 1) return new int[] {-1};  // 배열에 원소가 하나만 있으면 [-1] 반환
+        int min = Arrays.stream(arr).min().getAsInt();  // 배열에서 제일 작은 수 찾기
+        return Arrays.stream(arr).filter(num -> num != min).toArray();  // 제일 작은 수를 제외한 배열 반환
+    }
+}
+
+Python 예시
+ 
+def remove_smallest(arr):
+    # 제일 작은 수를 제거한 배열을 반환하는 함수
+    if len(arr) == 1:
+        return [-1]  # 배열에 원소가 하나만 있으면 [-1] 반환
+    arr.remove(min(arr))  # 배열에서 제일 작은 수를 제거
+    return arr  # 수정된 배열 반환
+
+arr = [4, 3, 2, 1]
+# 제일 작은 수를 제거한 배열을 반환하는 함수 호출
+print(remove_smallest(arr))  # 출력: [4, 3, 2]
+
+
+8. 핸드폰 번호 가리기
+문제 설명: 주어진 핸드폰 번호에서 마지막 4자리를 제외한 나머지를 *로 가리는 문제입니다.
+
+Java 예시
+  
+public class Main {
+    public static void main(String[] args) {
+        String phone_number = "01033334444";
+        // 핸드폰 번호를 가리는 함수 호출
+        System.out.println(hidePhoneNumber(phone_number));  // 출력: "*******4444"
+    }
+
+    // 핸드폰 번호에서 마지막 4자리를 제외하고 '*'로 가리는 함수
+    public static String hidePhoneNumber(String phone_number) {
+        return phone_number.replaceAll(".(?=.{'4'})", "*");  // 마지막 4자리를 제외하고 모두 '*'로 대체
+    }
+}
+
+Python 예시
+ 
+def hide_phone_number(phone_number):
+    # 핸드폰 번호에서 마지막 4자리를 제외하고 '*'로 가리는 함수
+    return '*' * len(phone_number[:-4]) + phone_number[-4:]  # 마지막 4자리 제외하고 '*'로 대체
+
+phone_number = "01033334444"
+# 핸드폰 번호를 가리는 함수 호출
+print(hide_phone_number(phone_number))  # 출력: "*******4444"

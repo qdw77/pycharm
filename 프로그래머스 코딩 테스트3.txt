@@ -1,0 +1,56 @@
+1. Java
+Java는 객체지향 언어이므로 기본적인 객체지향 개념을 잘 이해하고 있어야 합니다. 아래 내용을 집중적으로 짚고 가세요.
+
+기본 문법
+
+변수 선언: int x = 10;, String str = "hello";
+조건문: if, else, switch
+반복문: for, while, do-while
+배열: int[] arr = new int[5]; 또는 int[] arr = {1, 2, 3};
+메소드: public static void main(String[] args)
+
+객체지향 개념
+클래스 & 객체: class MyClass { int x; }
+상속: class Dog extends Animal { }
+인터페이스: interface Animal { void sound(); }
+다형성: 부모 클래스 타입으로 자식 클래스 객체를 처리
+접근 제한자: public, private, protected, default
+
+기타
+ArrayList, HashMap 활용: ArrayList<Integer> list = new ArrayList<>();, Map<String, Integer> map = new HashMap<>();
+Lambda 표현식: list.forEach(x -> System.out.println(x));
+
+알고리즘
+정렬: Arrays.sort(arr);, Collections.sort(list);
+이진 탐색: Arrays.binarySearch(arr, key);
+DFS/BFS: 그래프 탐색 알고리즘. Stack(DFS), Queue(BFS) 활용
+
+
+2. Python
+Python은 문법이 간결하고 다양한 라이브러리를 제공합니다. 기본 문법과 알고리즘을 빠르게 점검해 보세요.
+
+기본 문법
+변수 선언: x = 10, s = "hello"
+조건문: if, elif, else
+반복문: for, while
+리스트: arr = [1, 2, 3]
+딕셔너리: d = {'key': 'value'}
+함수 정의: def function_name():
+
+문자열 & 리스트
+리스트 슬라이싱: arr[start:end]
+리스트 합치기: arr1 + arr2
+리스트 컴프리헨션: [x for x in arr if condition]
+
+알고리즘
+정렬: sorted(arr), arr.sort()
+이진 탐색: bisect_left, bisect_right
+DFS/BFS: deque를 이용한 BFS, 재귀적 DFS 활용
+heapq: 우선순위 큐 구현
+
+알고리즘 문제 유형
+배열/리스트 처리: 탐색, 정렬, 이진 탐색, 중복 제거
+그래프 탐색: DFS, BFS, 연결 요소
+동적 계획법: 피보나치 수열, 최소 비용 경로
+문자열 처리: 회문, 애너그램, 부분 문자열
+구현 문제: 주어진 문제를 정확히 구현하기
